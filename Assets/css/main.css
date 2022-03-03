@@ -1,0 +1,69 @@
+/*Index page Styles*/
+/*Navbar Style*/
+.navbar {
+  opacity: 1;
+  background-color: #d0e2ff;
+}
+
+.navbar a.active {
+  font-weight: bold;
+}
+
+/*Job Details container*/
+#content_div {
+  background-color: azure;
+}
+
+#tab-1.job-item {
+  margin: 20px auto;
+  width: 80%;
+  border-style: double;
+}
+
+/*  admin login form styles*/
+/*Login form*/
+form {
+  border: 2px solid #969595;
+  width: 50%;
+  margin-left: 25%;
+  margin-top: 40px;
+}
+
+form .imageContainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+form .imageContainer .profile_pic {
+  width: 20%;
+  border-radius: 50%;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+  width: 70%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #043eaa;
+  color: white;
+  padding: 14px 20px;
+  margin-left: 30%;
+  position: relative;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 40%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+/*# sourceMappingURL=main.css.map */
