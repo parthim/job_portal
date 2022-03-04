@@ -10,7 +10,11 @@
 }
 
 /*Job Details container*/
-#content_div {
+#content_div form, #content_div table {
+  background-color: azure;
+}
+
+modal {
   background-color: azure;
 }
 
@@ -39,10 +43,42 @@ form .imageContainer .profile_pic {
   border-radius: 50%;
 }
 
+/*Second Navbar Admin options*/
+#admin_options.vl {
+  border-left: 4px solid #000;
+  height: auto;
+}
+
+#admin_options a.active {
+  background-color: #fff;
+}
+
 /* Full-width inputs */
-input[type=text], input[type=password] {
-  width: 70%;
-  padding: 12px 20px;
+input[type=text], input[type=password], input[type=email], input[type=tel], input[type=date], input[type=file] {
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+  /* Chrome, Safari, Edge, Opera */
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* Firefox */
+  -moz-appearance: textfield;
+}
+
+#modalForm-gender {
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
@@ -65,5 +101,33 @@ button {
 
 button:hover {
   opacity: 0.8;
+}
+
+/*Candidate Information modal*/
+#candidateInfoForm select {
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-appearance: listbox !important;
+}
+
+#candidateInfoForm select::-ms-expand {
+  display: block;
+}
+
+/*Change status modal*/
+#change_status select {
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-appearance: listbox !important;
+}
+
+#change_status select::-ms-expand {
+  display: block;
 }
 /*# sourceMappingURL=main.css.map */

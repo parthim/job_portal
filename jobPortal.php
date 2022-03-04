@@ -39,34 +39,53 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
-                    <a href="jobPortal.php" class="nav-item nav-link active" data-toggle="modal" data-target="#candidateLoginForm">Job Status</a>
+                    <a href="jobPortal.php" class="nav-item nav-link active">Job Status</a>
                     <a href="admin_login.php" class="nav-item nav-link ">Admin login</a>
             </div>
         </nav>
         <!-- Navbar End -->
 
         <!-- Modal form Start -->
-        <div class="modal fade" id="candidateLoginForm" tabindex = "-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <div class="modal-title">Candidate Verification</div>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+        <form action="application_status.php" method="post">
+            <div class="modal fade" id="candidateLoginForm" tabindex = "-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header text-center">
+                            <div class="modal-title w-100 fs-3">Candidate Verification</div>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                            </button>
+                        </div>
+                        <div class="modal-body ">
+                            <div class="md-form">
+                                <label for="modalForm-username">Username</label><br>
+                                <input type="text" id="modalForm-username" class="form-control validate w-100">
+                            </div>
+                            <div class="md-form">
+                                <label for="modalForm-date">Date of Birth</label><br>
+                                <input type="date" id="modalForm-date" class="form-control validate">
+                            </div>
+                        </div>
+                        <div class="modal-footer d-flex justify-content-center">
+                            <button type="submit" onclick="loadPage();" class="btn btn-primary">Verify</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </form>
         <!-- Modal form End -->
         <!-- Content Div Starts -->
         <div id="content_div" class="container-fluid p-0">
-
+        <button class="btn btn-primary btn-lg my-5" data-bs-toggle="modal" data-bs-target="#candidateLoginForm">Candidate Verification</button>
         </div>
         <!-- Content Div End -->
     </div>
 
     <!-- JavaScript Section -->
     <script src="Assets/js/main.js"></script>
+    <script language="text/javascript">
+        (function loadPage(){
+            window.location.href = "application_status.php";
+        })();
+    </script>
 </body>
 </html>

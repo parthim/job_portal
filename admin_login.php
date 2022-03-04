@@ -53,11 +53,11 @@
                 </div>
 
                 <div class="container">
-                    <label for="uname"><b>Username &nbsp:</b></label>
-                    <input type="text" placeholder="Enter Username" name="uname" required>
+                    <label for="uname"><b>Username &emsp; :</b></label>
+                    <input type="text" class="w-75 px-3 py-2" placeholder="Enter Username" name="uname" required>
                     <br>
-                    <label for="psw"><b>Password &nbsp :</b></label>
-                    <input type="password" placeholder="Enter Password" name="psw" required>
+                    <label for="psw"><b>Password &emsp;&nbsp; :</b></label>
+                    <input type="password" class="w-75 px-3 py-2"  placeholder="Enter Password" name="psw" required>
 
                     <button type="submit">Login</button><br>
                     <label style="margin-left:30%;">

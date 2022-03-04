@@ -10,6 +10,11 @@
 
     /*Job Details container*/
     #content_div{
+        & form,table{
+            background-color: azure;
+        }
+    }
+    modal{
         background-color: azure;
     }
     #tab-1{
@@ -39,11 +44,45 @@
             }
         }
     }
+    /*Second Navbar Admin options*/
+    #admin_options{
+        &.vl{
+            border-left: 4px solid #000;
+            height: auto;
+        }
+        a{
+            &.active{
+                background-color: #fff;
+            }
+        }
+    }
+
 
     /* Full-width inputs */
-    input[type=text], input[type=password] {
-        width: 70%;
-        padding: 12px 20px;
+    input{
+        &[type=text],&[type=password],&[type=email],&[type=tel],&[type=date],&[type=file] {
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            /* Chrome, Safari, Edge, Opera */
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        &[type=number] {
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            /* Firefox */
+            -moz-appearance: textfield;
+        }
+    }
+
+    #modalForm-gender {
         margin: 8px 0;
         display: inline-block;
         border: 1px solid #ccc;
@@ -65,4 +104,32 @@
             opacity: 0.8;
         }
     }
+    /*Candidate Information modal*/
+    #candidateInfoForm{
+        & select { 
+             
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            -webkit-appearance: listbox !important;
+            &::-ms-expand{
+                display: block;
+            }
+        }
+    }
 
+    /*Change status modal*/
+    #change_status{
+        & select { 
+             
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            -webkit-appearance: listbox !important;
+            &::-ms-expand{
+                display: block;
+            }
+        }
+    }
