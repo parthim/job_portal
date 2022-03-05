@@ -61,9 +61,8 @@
         <!-- Second Navbar ends -->
 
         <!-- Modal form for Change status -->
-        <form action="" method="post">
             <div class="modal fade" id="add_job" tabindex = "-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header text-left">
                             <div class="modal-title w-100 fs-3">Add New Job</div>
@@ -110,7 +109,57 @@
                     </div>
                 </div>
             </div>
-        </form>
+        <!-- Modal form ends -->
+            <div class="modal fade" id="edit_job" tabindex = "-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header text-left">
+                            <div class="modal-title w-100 fs-3">Edit Job</div>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                            </button>
+                        </div>
+                        <div class="modal-body ">
+                            <div class="md-form">
+                                <label for="modalForm-designation fs-4">Job Designation &emsp;&emsp;&nbsp; :</label>
+                                <input type="text" id="modalForm-designation" class="form-control validate w-50" required>
+                            </div>
+                            <div class="md-form">
+                                <label for="modalForm-companyName fs-4">Company Name &emsp;&emsp;&nbsp; :</label>
+                                <input type="text" id="modalForm-companyName" class="form-control validate w-50" required>
+                            </div>
+                            <div class="md-form">
+                                <label for="modalForm-status fs-4">Job Description &emsp;&emsp;&ensp; :</label>
+                                <input type="text" id="modalForm-designation" style="height:75px;" class="form-control validate w-50" required>
+                            </div>
+                            <div class="md-form">
+                                <label for="modalForm-Address fs-4">Company Address &emsp;&nbsp; :</label>
+                                <input type="text" id="modalForm-Address" class="form-control validate w-50" required>
+                            </div>
+                            <div class="md-form">
+                                <label for="modalForm-city fs-4">Company City &emsp;&emsp;&emsp;&nbsp; :</label>
+                                <input type="text" id="modalForm-city" class="form-control validate w-50" required>
+                            </div>
+                            <div class="md-form">
+                                <label for="modalForm-state fs-4">Company State &ensp;&emsp;&emsp;&nbsp; :</label>
+                                <input type="text" id="modalForm-state" class="form-control validate w-50" required>
+                            </div>
+                            <div class="md-form">
+                                <label for="modalForm-country fs-4">Company Country  &emsp;&ensp; :</label>
+                                <input type="text" id="modalForm-country" class="form-control validate w-50" required>
+                            </div>
+                            <div class="md-form">
+                                <label for="modalForm-logo fs-4">Company Logo &ensp;&emsp;&emsp;&nbsp; :</label>
+                                <input type="file" id="modalForm-logo" class="form-control validate w-50" accept="image/png, image/gif, image/jpeg" required>
+                            </div>  
+                        </div>
+                        <div class="modal-footer d-flex border-top-0">
+                            <button type="submit" class="btn btn-primary w-50">Edit </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- Edit Job Modal form -->
+
         <!-- Modal form ends -->
 
         <!-- Content Div -->
@@ -135,8 +184,8 @@
         <td>Otto</td>
         <td><img src="Assets/images/company_logo/number-one.png" style="width:15%;display:block;margin: 0px -180px;" alt="Company Logo"></td>
         <td><div class="d-flex">
-            <button class="btn btn-primary mx-3" type="button">Edit</button>
-            <button class="btn btn-primary mx-1" type="button">Delete</button>
+            <button class="btn btn-primary mx-3" type="button" data-bs-toggle="modal" data-bs-target="#edit_job">Edit</button>
+            <button class="btn btn-primary mx-1" type="button" data-bs-toggle="modal" data-bs-target="#delete_job">Delete</button>
         </div></a></td>
     </tr>
 

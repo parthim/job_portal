@@ -22,6 +22,11 @@
     <!-- Bootstrap Stylesheet link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
+    <!-- Ajax links -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.full.min.js"></script>
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="Assets/css/main.css">
@@ -47,24 +52,23 @@
 
         <!-- Content Div Starts -->
         <div id="content_div" class="container-fluid p-0">
-            <form action="adminPanel.php" method="post">
+            <form action="#"  id="admin_login_form" onsubmit="check_credentials()" method="get">
                 <div class="imageContainer">
                     <img src="Assets/images/admin_profile_image.png" alt="Profile Picture" class="profile_pic">
                 </div>
 
                 <div class="container">
-                    <label for="uname"><b>Username &emsp; :</b></label>
-                    <input type="text" class="w-75 px-3 py-2" placeholder="Enter Username" name="uname" required>
+                    <label for="email_id"><b>Email Id &emsp;&emsp; :</b></label>
+                    <input type="email" class="w-75 px-3 py-2" placeholder="Enter Username" id="email_id" autocomplete="nope" required>
                     <br>
                     <label for="psw"><b>Password &emsp;&nbsp; :</b></label>
-                    <input type="password" class="w-75 px-3 py-2"  placeholder="Enter Password" name="psw" required>
+                    <input type="password" class="w-75 px-3 py-2"  placeholder="Enter Password" id="psw" autocomplete="new-password" required>
 
                     <button type="submit">Login</button><br>
                     <label style="margin-left:30%;">
                     <input type="checkbox" checked="checked" name="remember"> Remember me
                     </label>
-                    <br>
-                    <label style="margin-left:30%;"><span class="psw">Forgot <a href="#">password?</a></span></label>
+                    <label style="margin-left:5%;"><span class="psw">Forgot <a href="#">password?</a></span></label>
                 </div>
             </form>
         </div>
@@ -73,5 +77,21 @@
 
     <!-- JavaScript Section -->
     <script src="Assets/js/main.js"></script>
+    <script src="Assets/js/admin_login_check.js"></script>
+    <script>
+        let connection =true;
+        function check_credentials(){
+            let input1=document.getElementById('email_id').value;
+            let input2=document.getElementById('psw').value;
+            connection =check(input1,input2);
+            if(connection){
+                document.getElementById('admin_login_form').action = "adminPanel.php";
+                console.log("Connected Successfully");
+            }
+            else{
+                alert("Wrong email or password");
+            }
+        }
+    </script>
 </body>
 </html>
