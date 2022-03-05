@@ -51,7 +51,7 @@
         <!-- Navbar End -->
         <!-- Modal form for Candidate info Start -->
         
-        <form action="" method="post">
+        <form  onsubmit="" method="post">
             <div class="modal fade" id="candidateInfoForm" tabindex = "-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
                     <div class="modal-content">
@@ -103,7 +103,7 @@
                                 <input type="number" id="modalForm-cgpa" class="form-control validate w-75">
                             </div>
                             <div class="md-form">
-                                <label for="modalForm-Resume fs-4">Last Name &emsp;&emsp;&emsp; :</label>
+                                <label for="modalForm-Resume fs-4">Resume &nbsp;&emsp;&emsp;&emsp;&emsp; :</label>
                                 <input type="file" id="modalForm-Resume" class="form-control validate w-75" name="resume">
                             </div>
                         </div>
