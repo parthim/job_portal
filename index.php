@@ -23,6 +23,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <!-- Ajax links -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.full.min.js"></script>
@@ -51,7 +52,7 @@
         <!-- Navbar End -->
         <!-- Modal form for Candidate info Start -->
         
-        <form  onsubmit="" method="post">
+        <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
             <div class="modal fade" id="candidateInfoForm" tabindex = "-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
                     <div class="modal-content">
@@ -63,28 +64,28 @@
                         <div class="modal-body ">
                             <div class="md-form">
                                 <label for="modalForm-fname fs-4">First Name &emsp;&emsp;&emsp; :</label>
-                                <input type="text" id="modalForm-fname" class="form-control validate w-75">
+                                <input type="text" id="modalForm-fname" class="form-control validate w-75" required>
                             </div>
                             <div class="md-form">
                                 <label for="modalForm-lname fs-4">Last Name &emsp;&emsp;&emsp; :</label>
-                                <input type="text" id="modalForm-lname" class="form-control validate w-75">
+                                <input type="text" id="modalForm-lname" class="form-control validate w-75" required>
                             </div>
                             <div class="md-form">
                                 <label for="modalForm-date fs-4">DOB &emsp;&emsp;&emsp;&ensp;&emsp;&emsp; :</label>
-                                <input type="date" id="modalForm-date" class="form-control validate w-75">
+                                <input type="date" id="modalForm-date" class="form-control validate w-75" required>
                             </div>
                             <div class="md-form">
                                 <label for="modalForm-phoneNumber fs-4">Phone Number &emsp; :</label>
-                                <input type="tel" id="modalForm-phoneNumber" class="form-control validate w-75">
+                                <input type="tel" id="modalForm-phoneNumber" class="form-control validate w-75" required>
                             </div>
                             <div class="md-form">
                                 <label for="modalForm-email fs-4">Email &emsp;&emsp;&emsp;&emsp;&nbsp;&emsp; :</label>
-                                <input type="email" id="modalForm-email" class="form-control validate w-75">
+                                <input type="email" id="modalForm-email" class="form-control validate w-75" required>
                             </div>
                             <div class="md-form">
                                 <label for="modalForm-gender fs-4">Gender &emsp; &emsp;&emsp;&emsp;&nbsp; :</label>
-                                <select class="form-control validate w-75" id="modalForm-gender">
-                                    <option value="Default" selected>Select</option>
+                                <select class="form-control gender validate w-75" required id="modalForm-gender">
+                                    <option value="default">Select</option>
                                     <option value="Male">Male</option>
                                     <option value="Female">Female</option>
                                     <option value="Others">Others</option>
@@ -92,117 +93,95 @@
                             </div>
                             <div class="md-form">
                                 <label for="modalForm-1oth fs-4">10th Percentage &ensp; :</label>
-                                <input type="number" id="modalForm-10th" class="form-control validate w-75">
+                                <input type="number" id="modalForm-10th" class="form-control validate w-75" required>
                             </div>
                             <div class="md-form">
                                 <label for="modalForm-12th fs-4">12th Percentage &ensp; :</label>
-                                <input type="number" id="modalForm-12th" class="form-control validate w-75">
+                                <input type="number" id="modalForm-12th" class="form-control validate w-75" required>
                             </div>
                             <div class="md-form">
                                 <label for="modalForm-cgpa fs-4">Bachelor Degree<br>CGPA &emsp;&emsp;&emsp;&emsp;&emsp;&nbsp; :</label>
-                                <input type="number" id="modalForm-cgpa" class="form-control validate w-75">
+                                <input type="number" id="modalForm-cgpa" class="form-control validate w-75" step=".01" required>
                             </div>
                             <div class="md-form">
                                 <label for="modalForm-Resume fs-4">Resume &nbsp;&emsp;&emsp;&emsp;&emsp; :</label>
-                                <input type="file" id="modalForm-Resume" class="form-control validate w-75" name="resume">
+                                <input type="file" id="modalForm-Resume" class="form-control validate w-75" required name="resume">
                             </div>
                         </div>
                         <div class="modal-footer d-flex">
-                            <button type="close" class="btn btn-secondary w-25">Cancel</button>
-                            <button type="submit" class="btn btn-primary w-25">Apply</button>
+                            <button type="close" class="btn btn-secondary w-25" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+                            <button type="submit" id="submit" class="btn btn-primary w-25">Apply</button>
                         </div>
                     </div>
                 </div>
             </div>
-        </form>
-
+        </form>        
         <!-- Modal form end -->
         <!-- Content Div -->
         <div id="content_div" class="container-fluid tab-content">
             <div id="tab-1" class="tab-pane active">
-                <!-- Job 1 -->
-                <div class="job-item p-3">
-                    <div class="row g-4">
-                        <div class="col-sm-12 col-md-8 d-flex align-items-center">
-                            <img class="flex-shrink-0 img-fluid border rounded" src="Assets/images/company_logo/number-one.png" alt="One" style="width: 80px; height: 80px;">
-                            <div class="text-start ps-4">
-                                <h5 class="mb-0">Software Engineer</h5>
-                                <p class="mb-2">Number-one Company</p>
-                                <p style = "font-size:20px;">Job <br> description</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
-                            <div class="d-flex mb-3">
-                                <a class="btn btn-primary btn-lg" href="#"  data-bs-toggle="modal" data-bs-target="#candidateInfoForm">Apply Now</a>
-                            </div>
-                        </div>
-                    </div>
-                
-                </div>
-                <!-- Job 2 -->
-                <div class="job-item p-3">
-                    <div class="row g-4">
-                        <div class="col-sm-12 col-md-8 d-flex align-items-center">
-                            <img class="flex-shrink-0 img-fluid border rounded" src="Assets/images/company_logo/number-2.png" alt="One" style="width: 80px; height: 80px;">
-                            <div class="text-start ps-4">
-                                <h5 class="mb-0">Software Developer</h5>
-                                <p class="mb-2">Number-Two Company</p>
-                                <p style = "font-size:20px;">Job <br> description</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
-                            <div class="d-flex mb-3">
-                                <a class="btn btn-primary btn-lg" href="#" data-bs-toggle="modal" data-bs-target="#candidateInfoForm">Apply Now</a>
-                            </div>
-                        </div>
-                    </div>
-                
-                </div>
-                <!-- Job 3 -->
-                <div class="job-item p-3">
-                    <div class="row g-4">
-                        <div class="col-sm-12 col-md-8 d-flex align-items-center">
-                            <img class="flex-shrink-0 img-fluid border rounded" src="Assets/images/company_logo/number-3.png" alt="One" style="width: 80px; height: 80px;">
-                            <div class="text-start ps-4">
-                                <h5 class="mb-0">Full Stack Developer</h5>
-                                <p class="mb-2">Number-Three Company</p>
-                                <p style = "font-size:20px;">Job <br> description</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
-                            <div class="d-flex mb-3">
-                                <a class="btn btn-primary btn-lg" href="#" data-bs-toggle="modal" data-bs-target="#candidateInfoForm">Apply Now</a>
-                            </div>
-                        </div>
-                    </div>
-                
-                </div>
-                <!-- Job 4 -->
-                <div class="job-item p-3">
-                    <div class="row g-4">
-                        <div class="col-sm-12 col-md-8 d-flex align-items-center">
-                            <img class="flex-shrink-0 img-fluid border rounded" src="Assets/images/company_logo/number-four.png" alt="One" style="width: 80px; height: 80px;">
-                            <div class="text-start ps-4">
-                                <h5 class="mb-0">Trainee Software Engineer</h5>
-                                <p class="mb-2">Number-four Company</p>
-                                <p style = "font-size:20px;">Job <br> description</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
-                            <div class="d-flex mb-3">
-                                <a class="btn btn-primary btn-lg" href="#" data-bs-toggle="modal" data-bs-target="#candidateInfoForm">Apply Now</a>
-                            </div>
-                        </div>
-                    </div>
-                
-                </div>
+                <!-- js added jobs here -->
             </div>
         </div>
         <!-- Content Div End -->
     </div>
 
     <!-- JavaScript Section -->
-    <script src="Assets/js/main.js"></script>
-
+    <script src = "Assets/js/main.js"></script>
+    <script src = "Assets/js/candidate_info.js"></script>
+    <script src = "Assets/js/index_info_display.js"></script>
+    <!-- <script>
+        $(document).ready(function() {
+ 
+            $("#submit").click(function() {
+ 
+            var fname = $('#modalForm-fname').val();
+            var lname = $('#modalForm-lname').val();
+            var cDate = $('#modalForm-date').val();
+            var phone = $('#modalForm-phoneNumber').val();
+            var cEmail = $('#modalForm-email').val();
+            var selectedGender= $(document).ready(function(){
+                $("select.gender").change(function(){
+                    selectedGender = $(this).children("option:selected").val();
+                });
+            });
+            var per_10th = $('#modalForm-10th').val();
+            var per_12th = $('#modalForm-12th').val();
+            var b_cgpa = $('#modalForm-cgpa').val();
+            var resume =$('#modalForm-Resume').prop('files')[0];;
+            console.console.log(fname);
+ 
+                if(fname==''||lname==''||cDate==''||phone==''||cEmail==''||selectedGender==''||per_10th==''||per_12th==''||b_cgpa==''||resume=='') {
+                    return false;
+                }
+ 
+                $.ajax({
+                    type: "POST",
+                    url: "candidate_info_store.php",
+                    data: {
+                        fname: fname,
+                        lname: lname,
+                        cDate: cDate,
+                        phone: phone,
+                        cEmail: cEmail,
+                        selectedGender: selectedGender,
+                        per_10th: per_10th,
+                        per_12th: per_12th,
+                        b_cgpa: b_cgpa,
+                        resume: resume
+                    },
+                    cache: false,
+                    success: function(data) {
+                        alert(data);
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(xhr);
+                    }
+                });
+                 
+            });
+ 
+        });
+    </script> -->
 </body>
 </html>

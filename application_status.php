@@ -49,112 +49,11 @@
             </div>
         </nav>
         <!-- Navbar End -->
-
-        <!-- Modal form Start -->
-        <div class="modal fade" id="candidateLoginForm" tabindex = "-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header text-center">
-                        <div class="modal-title w-100 fs-3">Candidate Verification</div>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                        </button>
-                    </div>
-                    <div class="modal-body ">
-                        <div class="md-form">
-                            <label for="modalForm-username">Username</label><br>
-                            <input type="text" id="modalForm-username" class="form-control validate w-100">
-                        </div>
-                        <div class="md-form">
-                            <label for="modalForm-date">Date of Birth</label><br>
-                            <input type="date" id="modalForm-date" class="form-control validate">
-                        </div>
-                    </div>
-                    <div class="modal-footer d-flex justify-content-center">
-                        <button class="btn btn-default">Verify</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Modal form End -->
         <!-- Content Div Starts -->
         <div id="content_div" class="container-fluid tab-content">
             <div id="tab-1" class="tab-pane active">
-                <!-- Job 1 -->
-                <div class="job-item p-3">
-                    <div class="row g-4">
-                        <div class="col-sm-12 col-md-8 d-flex align-items-center">
-                            <img class="flex-shrink-0 img-fluid border rounded" src="Assets/images/company_logo/number-one.png" alt="One" style="width: 80px; height: 80px;">
-                            <div class="text-start ps-4">
-                                <h5 class="mb-0">Software Engineer</h5>
-                                <p class="mb-2">Number-one Company</p>
-                                <p style = "font-size:20px;">Job <br> description</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
-                            <div class="d-flex mb-3">
-                                <a class="btn btn-default btn-lg" href="#">Pending</a>
-                            </div>
-                        </div>
-                    </div>
-                
-                </div>
-                <!-- Job 2 -->
-                <div class="job-item p-3">
-                    <div class="row g-4">
-                        <div class="col-sm-12 col-md-8 d-flex align-items-center">
-                            <img class="flex-shrink-0 img-fluid border rounded" src="Assets/images/company_logo/number-2.png" alt="One" style="width: 80px; height: 80px;">
-                            <div class="text-start ps-4">
-                                <h5 class="mb-0">Software Developer</h5>
-                                <p class="mb-2">Number-Two Company</p>
-                                <p style = "font-size:20px;">Job <br> description</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
-                            <div class="d-flex mb-3">
-                                <a class="btn btn-default btn-lg" href="#">Interview Scheduled <br> on mm/dd/yyyy</a>
-                            </div>
-                        </div>
-                    </div>
-                
-                </div>
-                <!-- Job 3 -->
-                <div class="job-item p-3">
-                    <div class="row g-4">
-                        <div class="col-sm-12 col-md-8 d-flex align-items-center">
-                            <img class="flex-shrink-0 img-fluid border rounded" src="Assets/images/company_logo/number-3.png" alt="One" style="width: 80px; height: 80px;">
-                            <div class="text-start ps-4">
-                                <h5 class="mb-0">Full Stack Developer</h5>
-                                <p class="mb-2">Number-Three Company</p>
-                                <p style = "font-size:20px;">Job <br> description</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
-                            <div class="d-flex mb-3">
-                                <a class="btn btn-default btn-lg" href="#">Selected</a>
-                            </div>
-                        </div>
-                    </div>
-                
-                </div>
-                <!-- Job 4 -->
-                <div class="job-item p-3">
-                    <div class="row g-4">
-                        <div class="col-sm-12 col-md-8 d-flex align-items-center">
-                            <img class="flex-shrink-0 img-fluid border rounded" src="Assets/images/company_logo/number-four.png" alt="One" style="width: 80px; height: 80px;">
-                            <div class="text-start ps-4">
-                                <h5 class="mb-0">Trainee Software Engineer</h5>
-                                <p class="mb-2">Number-four Company</p>
-                                <p style = "font-size:20px;">Job <br> description</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
-                            <div class="d-flex mb-3">
-                                <a class="btn btn-default btn-lg" href="#">Rejected</a>
-                            </div>
-                        </div>
-                    </div>
-                
-                </div>
+            <!-- Js Content population -->
+                    
             </div>
         </div>
         <!-- Content Div End -->
@@ -162,5 +61,7 @@
 
     <!-- JavaScript Section -->
     <script src="Assets/js/main.js"></script>
+    <script src = "Assets/js/job_status_info.js"></script>
+    
 </body>
 </html>

@@ -51,7 +51,7 @@
         <!-- Navbar End -->
 
         <!-- Modal form Start -->
-        <form action="application_status.php" method="post">
+        <form action="#" id="form_candidate_verification" onsubmit="verify_credentials()" method="post">
             <div class="modal fade" id="candidateLoginForm" tabindex = "-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
@@ -63,15 +63,14 @@
                         <div class="modal-body ">
                             <div class="md-form">
                                 <label for="modalForm-username">Username</label><br>
-                                <input type="text" id="modalForm-username" class="form-control validate w-100">
-                            </div>
+                                <input type="text" id="modalForm-username" class="form-control validate w-100" required>                            </div>
                             <div class="md-form">
                                 <label for="modalForm-date">Date of Birth</label><br>
-                                <input type="date" id="modalForm-date" class="form-control validate">
+                                <input type="date" id="modalForm-date" class="form-control validate" required>
                             </div>
                         </div>
                         <div class="modal-footer d-flex justify-content-center">
-                            <button type="submit" onclick="loadPage();" class="btn btn-primary">Verify</button>
+                            <button type="submit" class="btn btn-primary">Verify</button>
                         </div>
                     </div>
                 </div>
@@ -87,10 +86,22 @@
 
     <!-- JavaScript Section -->
     <script src="Assets/js/main.js"></script>
-    <script language="text/javascript">
-        (function loadPage(){
-            window.location.href = "application_status.php";
-        })();
+    <script src="Assets/js/candidate_verify.js"></script>
+    <script>
+        let connection =true;
+        function verify_credentials(){
+            let input1=document.getElementById('modalForm-username').value;
+            let input2=document.getElementById('modalForm-date').value;
+
+            connection =check(input1,input2);
+            if(connection){
+                document.getElementById('form_candidate_verification').action = "application_status.php";
+                console.log("Connected Successfully");
+            }
+            else{
+                alert("Wrong email or password");
+            }
+        }
     </script>
 </body>
 </html>

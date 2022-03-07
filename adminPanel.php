@@ -100,35 +100,33 @@
 
         <!-- Content Div -->
         <div id="content_div" class="container-fluid tab-content mt-3">
-        <table class="table table-bordered">
-  <thead class="table-dark">
-    <tr>
-      <th scope="col">Application Id</th>
-      <th scope="col">Job Designation</th>
-      <th scope="col">Company Name</th>
-      <th scope="col">Candidate Name</th>
-      <th scope="col">Resume</th>
-      <th scope="col">Change Status</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td class = "d-flex"><a href="#" download><button class="btn btn-primary p-0 ml-2" style="width:100%;"><i class="fa fa-download"></i> Download</button></a></td>
-      <td><a href="#" class="btn btn-default border-none ml-2"  data-bs-toggle="modal" data-bs-target="#change_status">Pending</a></td>
-    </tr>
-
-  </tbody>
-</table>
+            <table class="table table-bordered">
+                <thead class="table-dark">
+                    <tr>
+                    <th scope="col">Application Id</th>
+                    <th scope="col">Job Designation</th>
+                    <th scope="col">Company Name</th>
+                    <th scope="col">Candidate Name</th>
+                    <th scope="col">Resume</th>
+                    <th scope="col">Change Status</th>
+                    </tr>
+                </thead>
+                <tbody id="resume_list">
+                <!--  -->
+                </tbody>
+            </table>
         </div>
         <!-- Content Div End -->
     </div>
 
     <!-- JavaScript Section -->
     <script src="Assets/js/main.js"></script>
+    <script src="Assets/js/admin_resume_list.js"></script>
+
+    <script>
+        
+    </script>
+    
 
 </body>
 </html>
