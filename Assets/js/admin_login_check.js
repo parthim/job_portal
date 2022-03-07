@@ -1,6 +1,6 @@
 
 let userId,email,password;
-$.get("http://localhost/job_portal/mysql_connection.php",function(data,status){
+$.get("http://localhost/job_portal/admin_login_connection.php",function(data,status){
     $.each(data,function(item,value){
         userId +=' '+ value.userId;
         email +=" "+ value.email_id;

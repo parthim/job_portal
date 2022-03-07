@@ -133,3 +133,15 @@
             }
         }
     }
+    #form_add_job,#edit_job{
+        & select{
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            -webkit-appearance: listbox !important;
+            &::-ms-expand{
+                display: block;
+            }
+        }
+    }

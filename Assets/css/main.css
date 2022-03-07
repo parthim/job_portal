@@ -130,4 +130,17 @@ button:hover {
 #change_status select::-ms-expand {
   display: block;
 }
+
+#form_add_job select, #edit_job select {
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-appearance: listbox !important;
+}
+
+#form_add_job select::-ms-expand, #edit_job select::-ms-expand {
+  display: block;
+}
 /*# sourceMappingURL=main.css.map */
