@@ -50,7 +50,7 @@
         </nav>
         <!-- Navbar End -->
         <!-- Content Div Starts -->
-        <div id="content_div" class="container-fluid tab-content">
+        <div id="content_div" class="w-75 container-fluid tab-content" style="margin-left:9%;">
             <div id="tab-1" class="tab-pane active">
             <!-- Js Content population -->
                     

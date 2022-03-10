@@ -51,7 +51,7 @@
         <!-- Navbar End -->
 
         <!-- Modal form Start -->
-        <form action="#" id="form_candidate_verification" onsubmit="verify_credentials()" method="post">
+        <form action="#" id="form_candidate_verification" onsubmit="verify_credentials()" method="post" class="d-none">
             <div class="modal fade" id="candidateLoginForm" tabindex = "-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
@@ -62,7 +62,7 @@
                         </div>
                         <div class="modal-body ">
                             <div class="md-form">
-                                <label for="modalForm-username">Username</label><br>
+                                <label for="modalForm-username">Candidate Email</label><br>
                                 <input type="text" id="modalForm-username" class="form-control validate w-100" required>                            </div>
                             <div class="md-form">
                                 <label for="modalForm-date">Date of Birth</label><br>
@@ -79,13 +79,18 @@
         <!-- Modal form End -->
         <!-- Content Div Starts -->
         <div id="content_div" class="container-fluid p-0">
-        <button class="btn btn-primary btn-lg my-5" data-bs-toggle="modal" data-bs-target="#candidateLoginForm">Candidate Verification</button>
+        <button class="btn btn-primary btn-lg my-5" data-bs-toggle="modal" data-bs-target="#candidateLoginForm" id="verify_can_info">Candidate Verification</button>
         </div>
         <!-- Content Div End -->
     </div>
 
     <!-- JavaScript Section -->
     <script src="Assets/js/main.js"></script>
+    <script>
+        $("#verify_can_info").click(function(){
+            $("#form_candidate_verification").removeClass("d-none");
+        });
+    </script>
     <script src="Assets/js/candidate_verify.js"></script>
     <script>
         let connection =true;

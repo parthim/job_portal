@@ -1,6 +1,6 @@
 <?php
     require_once 'mysql_connection.php';
-    $query = "SELECT `firstName`,`dob` FROM `candidate_info`";
+    $query = "SELECT `email`,`dob` FROM `candidate_info`";
     $result = mysqli_query($conn,$query);
     $data=[];
     if($result){

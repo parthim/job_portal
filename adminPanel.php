@@ -24,6 +24,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <!-- Ajax links -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.full.min.js"></script>
 
@@ -61,7 +62,7 @@
         <!-- Second Navbar ends -->
 
         <!-- Modal form for Change status -->
-        <form action="" method="post">
+        <form id="change_status_form" class="d-none">
             <div class="modal fade" id="change_status" tabindex = "-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
@@ -73,26 +74,27 @@
                         <div class="modal-body ">
                             <div class="md-form">
                                 <label for="modalForm-status fs-4">Status &emsp;&ensp; &emsp;&emsp;&emsp;&nbsp; :</label>
-                                <select class="form-control validate w-50" id="modalForm-status">
+                                <select class="form-control validate w-50" id="modalForm-status" onchange="showOrHideDiv()">
                                     <option value="default" selected>Pending</option>
                                     <option value="interview">Interview Scheduled</option>
                                     <option value="selected">Selected</option>
                                     <option value="rejected">Rejected</option>
                                 </select>
                             </div>
-                            <div class="md-form">
+                            <div class="md-form d-none" id="date_div">
                                 <label for="modalForm-date fs-4">Scheduled on &ensp;&emsp;&nbsp :</label>
-                                <input type="date" id="modalForm-date" class="form-control validate w-50" required>
+                                <input type="date" id="modalForm-date"  class="form-control validate w-50" required>
                             </div>
-                            <div class="md-form">
+                            <div class="md-form d-none" id="review_div">
                                 <label for="modalForm-review">Review &emsp;&emsp;&emsp;&emsp;&ensp;&nbsp; :</label>
-                                <input type="text" row="5" cols="50" id="modalForm-review" class="form-control validate w-50" style="height:100px;">
+                                <input type="text" row="5" cols="50" id="modalForm-review" class="form-control validate w-50" style="height:100px;" required>
                             </div>  
                         </div>
                         <div class="modal-footer d-flex border-top-0">
-                            <button type="submit" class="btn btn-primary w-50">Change</button>
+                            <button type="button" id="change_button" class="btn btn-primary w-50">Change</button>
                         </div>
                     </div>
+
                 </div>
             </div>
         </form>
@@ -122,11 +124,8 @@
     <!-- JavaScript Section -->
     <script src="Assets/js/main.js"></script>
     <script src="Assets/js/admin_resume_list.js"></script>
-
-    <script>
-        
-    </script>
-    
+    <script src="Assets/js/change_application_status.js"></script>
+    <script src="Assets/js/update_database_status.js"></script>
 
 </body>
 </html>

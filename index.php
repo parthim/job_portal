@@ -52,7 +52,7 @@
         <!-- Navbar End -->
         <!-- Modal form for Candidate info Start -->
         
-        <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
+        <form id="form_candidate_info" class="d-none">
             <div class="modal fade" id="candidateInfoForm" tabindex = "-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
                     <div class="modal-content">
@@ -63,27 +63,27 @@
                         </div>
                         <div class="modal-body ">
                             <div class="md-form">
-                                <label for="modalForm-fname fs-4">First Name &emsp;&emsp;&emsp; :</label>
+                                <label for="modalForm-fname fs-4">First Name &emsp;&emsp;&emsp; </label>
                                 <input type="text" id="modalForm-fname" class="form-control validate w-75" required>
                             </div>
                             <div class="md-form">
-                                <label for="modalForm-lname fs-4">Last Name &emsp;&emsp;&emsp; :</label>
+                                <label for="modalForm-lname fs-4">Last Name &emsp;&emsp;&emsp; </label>
                                 <input type="text" id="modalForm-lname" class="form-control validate w-75" required>
                             </div>
                             <div class="md-form">
-                                <label for="modalForm-date fs-4">DOB &emsp;&emsp;&emsp;&ensp;&emsp;&emsp; :</label>
+                                <label for="modalForm-date fs-4">DOB &emsp;&emsp;&emsp;&ensp;&emsp;&emsp; </label>
                                 <input type="date" id="modalForm-date" class="form-control validate w-75" required>
                             </div>
                             <div class="md-form">
-                                <label for="modalForm-phoneNumber fs-4">Phone Number &emsp; :</label>
+                                <label for="modalForm-phoneNumber fs-4">Phone Number &emsp; </label>
                                 <input type="tel" id="modalForm-phoneNumber" class="form-control validate w-75" required>
                             </div>
                             <div class="md-form">
-                                <label for="modalForm-email fs-4">Email &emsp;&emsp;&emsp;&emsp;&nbsp;&emsp; :</label>
+                                <label for="modalForm-email fs-4">Email &emsp;&emsp;&emsp;&emsp;&nbsp;&emsp; </label>
                                 <input type="email" id="modalForm-email" class="form-control validate w-75" required>
                             </div>
                             <div class="md-form">
-                                <label for="modalForm-gender fs-4">Gender &emsp; &emsp;&emsp;&emsp;&nbsp; :</label>
+                                <label for="modalForm-gender fs-4">Gender &emsp; &emsp;&emsp;&emsp;&nbsp; </label>
                                 <select class="form-control gender validate w-75" required id="modalForm-gender">
                                     <option value="default">Select</option>
                                     <option value="Male">Male</option>
@@ -92,25 +92,25 @@
                                 </select>
                             </div>
                             <div class="md-form">
-                                <label for="modalForm-1oth fs-4">10th Percentage &ensp; :</label>
+                                <label for="modalForm-1oth fs-4">10th Percentage &ensp; </label>
                                 <input type="number" id="modalForm-10th" class="form-control validate w-75" required>
                             </div>
                             <div class="md-form">
-                                <label for="modalForm-12th fs-4">12th Percentage &ensp; :</label>
+                                <label for="modalForm-12th fs-4">12th Percentage &ensp; </label>
                                 <input type="number" id="modalForm-12th" class="form-control validate w-75" required>
                             </div>
                             <div class="md-form">
-                                <label for="modalForm-cgpa fs-4">Bachelor Degree<br>CGPA &emsp;&emsp;&emsp;&emsp;&emsp;&nbsp; :</label>
+                                <label for="modalForm-cgpa fs-4">Bachelor Degree<br>CGPA &emsp;&emsp;&emsp;&emsp;&emsp;&nbsp; </label>
                                 <input type="number" id="modalForm-cgpa" class="form-control validate w-75" step=".01" required>
                             </div>
                             <div class="md-form">
-                                <label for="modalForm-Resume fs-4">Resume &nbsp;&emsp;&emsp;&emsp;&emsp; :</label>
+                                <label for="modalForm-Resume fs-4">Resume &nbsp;&emsp;&emsp;&emsp;&emsp; </label>
                                 <input type="file" id="modalForm-Resume" class="form-control validate w-75" required name="resume">
                             </div>
                         </div>
                         <div class="modal-footer d-flex">
                             <button type="close" class="btn btn-secondary w-25" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
-                            <button type="submit" id="submit" class="btn btn-primary w-25">Apply</button>
+                            <button type="button" id="candidate_info_button" class="btn btn-primary w-25">Apply</button>
                         </div>
                     </div>
                 </div>
@@ -118,70 +118,20 @@
         </form>        
         <!-- Modal form end -->
         <!-- Content Div -->
-        <div id="content_div" class="container-fluid tab-content">
-            <div id="tab-1" class="tab-pane active">
-                <!-- js added jobs here -->
+        <div class="row">
+            <div id="content_div" class=" tab-content column1" style="margin-left:4%;border-right:1px solid #000;margin-top:15px; ">
+                <div id="i_tab-1" class="tab-pane active">
+                    <!-- js added jobs here -->
+                </div>
             </div>
+            <div id="option-div" class=" tab-content column2"></div>
         </div>
         <!-- Content Div End -->
     </div>
 
     <!-- JavaScript Section -->
     <script src = "Assets/js/main.js"></script>
-    <script src = "Assets/js/candidate_info.js"></script>
     <script src = "Assets/js/index_info_display.js"></script>
-    <!-- <script>
-        $(document).ready(function() {
- 
-            $("#submit").click(function() {
- 
-            var fname = $('#modalForm-fname').val();
-            var lname = $('#modalForm-lname').val();
-            var cDate = $('#modalForm-date').val();
-            var phone = $('#modalForm-phoneNumber').val();
-            var cEmail = $('#modalForm-email').val();
-            var selectedGender= $(document).ready(function(){
-                $("select.gender").change(function(){
-                    selectedGender = $(this).children("option:selected").val();
-                });
-            });
-            var per_10th = $('#modalForm-10th').val();
-            var per_12th = $('#modalForm-12th').val();
-            var b_cgpa = $('#modalForm-cgpa').val();
-            var resume =$('#modalForm-Resume').prop('files')[0];;
-            console.console.log(fname);
- 
-                if(fname==''||lname==''||cDate==''||phone==''||cEmail==''||selectedGender==''||per_10th==''||per_12th==''||b_cgpa==''||resume=='') {
-                    return false;
-                }
- 
-                $.ajax({
-                    type: "POST",
-                    url: "candidate_info_store.php",
-                    data: {
-                        fname: fname,
-                        lname: lname,
-                        cDate: cDate,
-                        phone: phone,
-                        cEmail: cEmail,
-                        selectedGender: selectedGender,
-                        per_10th: per_10th,
-                        per_12th: per_12th,
-                        b_cgpa: b_cgpa,
-                        resume: resume
-                    },
-                    cache: false,
-                    success: function(data) {
-                        alert(data);
-                    },
-                    error: function(xhr, status, error) {
-                        console.error(xhr);
-                    }
-                });
-                 
-            });
- 
-        });
-    </script> -->
+    <script src = "Assets/js/candidate_info.js"></script>
 </body>
 </html>
